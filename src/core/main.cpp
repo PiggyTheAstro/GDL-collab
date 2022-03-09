@@ -1,3 +1,6 @@
+#ifdef __GNUC__
+	#define SDL_MAIN_AVAILABLE
+#endif
 #include <SDL.h>
 #include <core/game.h>
 #include <components/rectRenderer.h>
