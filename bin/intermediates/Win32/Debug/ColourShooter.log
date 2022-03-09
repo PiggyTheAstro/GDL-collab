@@ -1,0 +1,230 @@
+﻿  asteroidScript.cpp
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\asteroidScript.cpp(14,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\asteroidScript.cpp(15): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<Clock>(void)' being compiled
+          with
+          [
+              System=Clock
+          ]
+C:\Users\Yasin\source\repos\ColourShooter\header\core\entity.h(32,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\asteroidScript.cpp(17): message : see reference to function template instantiation 'Comp *Entity::GetComponent<RectCollider>(void)' being compiled
+          with
+          [
+              Comp=RectCollider
+          ]
+  asteroidSpawner.cpp
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\asteroidSpawner.cpp(12): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<EntitySystem>(void)' being compiled
+          with
+          [
+              System=EntitySystem
+          ]
+C:\Users\Yasin\source\repos\ColourShooter\header\core\entity.h(32,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\asteroidSpawner.cpp(38): message : see reference to function template instantiation 'Comp *Entity::GetComponent<SpriteRenderer>(void)' being compiled
+          with
+          [
+              Comp=SpriteRenderer
+          ]
+  bulletMovement.cpp
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\bulletMovement.cpp(9): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<Clock>(void)' being compiled
+          with
+          [
+              System=Clock
+          ]
+  playerMovement.cpp
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\playerMovement.cpp(18,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\playerMovement.cpp(10): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<Clock>(void)' being compiled
+          with
+          [
+              System=Clock
+          ]
+C:\Users\Yasin\source\repos\ColourShooter\header\core\entity.h(32,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\playerMovement.cpp(12): message : see reference to function template instantiation 'Comp *Entity::GetComponent<Rigidbody>(void)' being compiled
+          with
+          [
+              Comp=Rigidbody
+          ]
+  playerShooting.cpp
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\playerShooting.cpp(11): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<Clock>(void)' being compiled
+          with
+          [
+              System=Clock
+          ]
+C:\Users\Yasin\source\repos\ColourShooter\header\core\entity.h(32,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\playerShooting.cpp(36): message : see reference to function template instantiation 'Comp *Entity::GetComponent<SpriteRenderer>(void)' being compiled
+          with
+          [
+              Comp=SpriteRenderer
+          ]
+  seekerScript.cpp
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\seekerScript.cpp(15,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\seekerScript.cpp(16): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<Clock>(void)' being compiled
+          with
+          [
+              System=Clock
+          ]
+C:\Users\Yasin\source\repos\ColourShooter\header\core\entity.h(32,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\seekerScript.cpp(18): message : see reference to function template instantiation 'Comp *Entity::GetComponent<RectCollider>(void)' being compiled
+          with
+          [
+              Comp=RectCollider
+          ]
+  seekerSpawn.cpp
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\seekerSpawn.cpp(13): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<EntitySystem>(void)' being compiled
+          with
+          [
+              System=EntitySystem
+          ]
+C:\Users\Yasin\source\repos\ColourShooter\header\core\entity.h(32,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\game\seekerSpawn.cpp(40): message : see reference to function template instantiation 'Comp *Entity::GetComponent<SpriteRenderer>(void)' being compiled
+          with
+          [
+              Comp=SpriteRenderer
+          ]
+  rectCollider.cpp
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\rectCollider.cpp(9): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<CollisionSystem>(void)' being compiled
+          with
+          [
+              System=CollisionSystem
+          ]
+  rectRenderer.cpp
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\rectRenderer.cpp(8): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<RenderSystem>(void)' being compiled
+          with
+          [
+              System=RenderSystem
+          ]
+  rigidbody.cpp
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\rigidbody.cpp(7): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<Clock>(void)' being compiled
+          with
+          [
+              System=Clock
+          ]
+  spriteRenderer.cpp
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\components\spriteRenderer.cpp(9): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<RenderSystem>(void)' being compiled
+          with
+          [
+              System=RenderSystem
+          ]
+  component.cpp
+  entity.cpp
+  game.cpp
+  main.cpp
+C:\Users\Yasin\source\repos\ColourShooter\src\core\main.cpp(27,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Yasin\source\repos\ColourShooter\src\core\main.cpp(27,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\core\main.cpp(17): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<EntitySystem>(void)' being compiled
+          with
+          [
+              System=EntitySystem
+          ]
+C:\Users\Yasin\source\repos\ColourShooter\header\core\entity.h(32,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\core\main.cpp(22): message : see reference to function template instantiation 'Comp *Entity::GetComponent<SpriteRenderer>(void)' being compiled
+          with
+          [
+              Comp=SpriteRenderer
+          ]
+  renderable.cpp
+  serviceHandler.cpp
+  subsystem.cpp
+  timer.cpp
+  transform.cpp
+  Generating Code...
+  Compiling...
+  assetManager.cpp
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\assetManager.cpp(24,20): warning C4018: '<': signed/unsigned mismatch
+  camera.cpp
+  clock.cpp
+  collisionSystem.cpp
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\collisionSystem.cpp(7,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\collisionSystem.cpp(9,21): warning C4018: '<': signed/unsigned mismatch
+  entitySystem.cpp
+  The contents of <ranges> are available only with C++20 concepts support.
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\entitySystem.cpp(32,20): warning C4018: '<': signed/unsigned mismatch
+  inputHandler.cpp
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\inputHandler.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\inputHandler.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\inputHandler.cpp(53,20): warning C4018: '<': signed/unsigned mismatch
+  renderSystem.cpp
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\renderSystem.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\renderSystem.cpp(46,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\renderSystem.cpp(57,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\header\core\serviceHandler.h(15,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Yasin\source\repos\ColourShooter\src\systems\renderSystem.cpp(10): message : see reference to function template instantiation 'System *ServiceHandler::GetModule<Camera>(void)' being compiled
+          with
+          [
+              System=Camera
+          ]
+  Generating Code...
+transform.obj : error LNK2001: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(float,float)" (??0Vector2@Vectors@@QAE@MM@Z)
+camera.obj : error LNK2001: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(float,float)" (??0Vector2@Vectors@@QAE@MM@Z)
+asteroidScript.obj : error LNK2001: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(float,float)" (??0Vector2@Vectors@@QAE@MM@Z)
+playerShooting.obj : error LNK2001: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(float,float)" (??0Vector2@Vectors@@QAE@MM@Z)
+seekerScript.obj : error LNK2001: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(float,float)" (??0Vector2@Vectors@@QAE@MM@Z)
+main.obj : error LNK2001: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(float,float)" (??0Vector2@Vectors@@QAE@MM@Z)
+asteroidScript.obj : error LNK2019: unresolved external symbol "public: void __thiscall Vectors::Vector2::operator+=(class Vectors::Vector2)" (??YVector2@Vectors@@QAEXV01@@Z) referenced in function "public: virtual void __thiscall AsteroidScript::Update(void)" (?Update@AsteroidScript@@UAEXXZ)
+bulletMovement.obj : error LNK2001: unresolved external symbol "public: void __thiscall Vectors::Vector2::operator+=(class Vectors::Vector2)" (??YVector2@Vectors@@QAEXV01@@Z)
+rigidbody.obj : error LNK2001: unresolved external symbol "public: void __thiscall Vectors::Vector2::operator+=(class Vectors::Vector2)" (??YVector2@Vectors@@QAEXV01@@Z)
+asteroidScript.obj : error LNK2019: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator-(class Vectors::Vector2)" (??GVector2@Vectors@@QAE?AV01@V01@@Z) referenced in function "public: virtual void __thiscall AsteroidScript::Update(void)" (?Update@AsteroidScript@@UAEXXZ)
+camera.obj : error LNK2001: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator-(class Vectors::Vector2)" (??GVector2@Vectors@@QAE?AV01@V01@@Z)
+rigidbody.obj : error LNK2001: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator*(float)" (??DVector2@Vectors@@QAE?AV01@M@Z)
+asteroidScript.obj : error LNK2001: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator*(float)" (??DVector2@Vectors@@QAE?AV01@M@Z)
+bulletMovement.obj : error LNK2001: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator*(float)" (??DVector2@Vectors@@QAE?AV01@M@Z)
+playerMovement.obj : error LNK2001: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator*(float)" (??DVector2@Vectors@@QAE?AV01@M@Z)
+seekerScript.obj : error LNK2001: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator*(float)" (??DVector2@Vectors@@QAE?AV01@M@Z)
+asteroidScript.obj : error LNK2019: unresolved external symbol "public: float __thiscall Vectors::Vector2::Magnitude(void)" (?Magnitude@Vector2@Vectors@@QAEMXZ) referenced in function "public: virtual void __thiscall AsteroidScript::Update(void)" (?Update@AsteroidScript@@UAEXXZ)
+playerShooting.obj : error LNK2001: unresolved external symbol "public: float __thiscall Vectors::Vector2::Magnitude(void)" (?Magnitude@Vector2@Vectors@@QAEMXZ)
+asteroidScript.obj : error LNK2019: unresolved external symbol "int __cdecl Random::Randint(int,int)" (?Randint@Random@@YAHHH@Z) referenced in function "public: virtual void __thiscall AsteroidScript::Start(class Transform *)" (?Start@AsteroidScript@@UAEXPAVTransform@@@Z)
+asteroidSpawner.obj : error LNK2001: unresolved external symbol "int __cdecl Random::Randint(int,int)" (?Randint@Random@@YAHHH@Z)
+seekerScript.obj : error LNK2001: unresolved external symbol "int __cdecl Random::Randint(int,int)" (?Randint@Random@@YAHHH@Z)
+seekerSpawn.obj : error LNK2001: unresolved external symbol "int __cdecl Random::Randint(int,int)" (?Randint@Random@@YAHHH@Z)
+asteroidScript.obj : error LNK2019: unresolved external symbol "float __cdecl Random::Rand(float,float)" (?Rand@Random@@YAMMM@Z) referenced in function "public: virtual void __thiscall AsteroidScript::Start(class Transform *)" (?Start@AsteroidScript@@UAEXPAVTransform@@@Z)
+asteroidSpawner.obj : error LNK2001: unresolved external symbol "float __cdecl Random::Rand(float,float)" (?Rand@Random@@YAMMM@Z)
+seekerScript.obj : error LNK2001: unresolved external symbol "float __cdecl Random::Rand(float,float)" (?Rand@Random@@YAMMM@Z)
+seekerSpawn.obj : error LNK2001: unresolved external symbol "float __cdecl Random::Rand(float,float)" (?Rand@Random@@YAMMM@Z)
+playerMovement.obj : error LNK2019: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator+(float)" (??HVector2@Vectors@@QAE?AV01@M@Z) referenced in function "public: virtual void __thiscall PlayerMovement::Update(void)" (?Update@PlayerMovement@@UAEXXZ)
+playerShooting.obj : error LNK2019: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator+(class Vectors::Vector2)" (??HVector2@Vectors@@QAE?AV01@V01@@Z) referenced in function "public: void __thiscall PlayerShooting::Shoot(void)" (?Shoot@PlayerShooting@@QAEXXZ)
+playerShooting.obj : error LNK2019: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator/(float)" (??KVector2@Vectors@@QAE?AV01@M@Z) referenced in function "public: void __thiscall PlayerShooting::Shoot(void)" (?Shoot@PlayerShooting@@QAEXXZ)
+rigidbody.obj : error LNK2001: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::operator/(float)" (??KVector2@Vectors@@QAE?AV01@M@Z)
+seekerSpawn.obj : error LNK2019: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(void)" (??0Vector2@Vectors@@QAE@XZ) referenced in function "public: __thiscall Rigidbody::Rigidbody(void)" (??0Rigidbody@@QAE@XZ)
+main.obj : error LNK2001: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(void)" (??0Vector2@Vectors@@QAE@XZ)
+transform.obj : error LNK2001: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(void)" (??0Vector2@Vectors@@QAE@XZ)
+camera.obj : error LNK2001: unresolved external symbol "public: __thiscall Vectors::Vector2::Vector2(void)" (??0Vector2@Vectors@@QAE@XZ)
+rigidbody.obj : error LNK2019: unresolved external symbol "public: void __thiscall Vectors::Vector2::operator-=(class Vectors::Vector2)" (??ZVector2@Vectors@@QAEXV01@@Z) referenced in function "public: virtual void __thiscall Rigidbody::Update(void)" (?Update@Rigidbody@@UAEXXZ)
+rigidbody.obj : error LNK2019: unresolved external symbol "public: void __thiscall Vectors::Vector2::ClampMagnitude(float)" (?ClampMagnitude@Vector2@Vectors@@QAEXM@Z) referenced in function "public: virtual void __thiscall Rigidbody::Update(void)" (?Update@Rigidbody@@UAEXXZ)
+game.obj : error LNK2019: unresolved external symbol _SDL_CreateWindow referenced in function "public: __thiscall Game::Game(void)" (??0Game@@QAE@XZ)
+main.obj : error LNK2019: unresolved external symbol _SDL_GetCurrentDisplayMode referenced in function _SDL_main
+camera.obj : error LNK2001: unresolved external symbol _SDL_GetCurrentDisplayMode
+main.obj : error LNK2019: unresolved external symbol _SDL_Quit referenced in function _SDL_main
+transform.obj : error LNK2019: unresolved external symbol "public: class Vectors::Vector2 __thiscall Vectors::Vector2::Rotate(float)" (?Rotate@Vector2@Vectors@@QAE?AV12@M@Z) referenced in function "public: class Vectors::Vector2 __thiscall Transform::Down(void)" (?Down@Transform@@QAE?AVVector2@Vectors@@XZ)
+assetManager.obj : error LNK2019: unresolved external symbol _SDL_RWFromFile referenced in function "public: struct SDL_Texture * __thiscall AssetManager::LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTexture@AssetManager@@QAEPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+assetManager.obj : error LNK2019: unresolved external symbol _SDL_MapRGB referenced in function "public: struct SDL_Texture * __thiscall AssetManager::LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTexture@AssetManager@@QAEPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+assetManager.obj : error LNK2019: unresolved external symbol _SDL_FreeSurface referenced in function "public: struct SDL_Texture * __thiscall AssetManager::LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTexture@AssetManager@@QAEPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+assetManager.obj : error LNK2019: unresolved external symbol _SDL_LoadBMP_RW referenced in function "public: struct SDL_Texture * __thiscall AssetManager::LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTexture@AssetManager@@QAEPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+assetManager.obj : error LNK2019: unresolved external symbol _SDL_SetColorKey referenced in function "public: struct SDL_Texture * __thiscall AssetManager::LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTexture@AssetManager@@QAEPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+assetManager.obj : error LNK2019: unresolved external symbol _SDL_GetWindowFromID referenced in function "public: struct SDL_Texture * __thiscall AssetManager::LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTexture@AssetManager@@QAEPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+renderSystem.obj : error LNK2001: unresolved external symbol _SDL_GetWindowFromID
+assetManager.obj : error LNK2019: unresolved external symbol _SDL_GetRenderer referenced in function "public: struct SDL_Texture * __thiscall AssetManager::LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTexture@AssetManager@@QAEPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+assetManager.obj : error LNK2019: unresolved external symbol _SDL_CreateTextureFromSurface referenced in function "public: struct SDL_Texture * __thiscall AssetManager::LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTexture@AssetManager@@QAEPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+assetManager.obj : error LNK2019: unresolved external symbol _SDL_DestroyTexture referenced in function "public: void __thiscall AssetManager::Dereference(struct SDL_Texture *)" (?Dereference@AssetManager@@QAEXPAUSDL_Texture@@@Z)
+clock.obj : error LNK2019: unresolved external symbol _SDL_GetTicks referenced in function "public: void __thiscall Clock::Tick(void)" (?Tick@Clock@@QAEXXZ)
+collisionSystem.obj : error LNK2019: unresolved external symbol "bool __cdecl Physics::OverlapRects(struct SDL_FRect,struct SDL_FRect)" (?OverlapRects@Physics@@YA_NUSDL_FRect@@0@Z) referenced in function "public: bool __thiscall CollisionSystem::isColliding(struct SDL_FRect,struct SDL_FRect)" (?isColliding@CollisionSystem@@QAE_NUSDL_FRect@@0@Z)
+inputHandler.obj : error LNK2019: unresolved external symbol _SDL_PollEvent referenced in function "public: void __thiscall InputHandler::CheckEvent(void)" (?CheckEvent@InputHandler@@QAEXXZ)
+renderSystem.obj : error LNK2019: unresolved external symbol _SDL_CreateRenderer referenced in function "public: __thiscall RenderSystem::RenderSystem(void)" (??0RenderSystem@@QAE@XZ)
+renderSystem.obj : error LNK2019: unresolved external symbol _SDL_SetRenderDrawColor referenced in function "public: void __thiscall RenderSystem::Render(void)" (?Render@RenderSystem@@QAEXXZ)
+renderSystem.obj : error LNK2019: unresolved external symbol _SDL_RenderClear referenced in function "public: void __thiscall RenderSystem::Render(void)" (?Render@RenderSystem@@QAEXXZ)
+renderSystem.obj : error LNK2019: unresolved external symbol _SDL_RenderFillRectF referenced in function "private: void __thiscall RenderSystem::RenderRects(void)" (?RenderRects@RenderSystem@@AAEXXZ)
+renderSystem.obj : error LNK2019: unresolved external symbol _SDL_RenderCopyExF referenced in function "private: void __thiscall RenderSystem::RenderSprites(void)" (?RenderSprites@RenderSystem@@AAEXXZ)
+renderSystem.obj : error LNK2019: unresolved external symbol _SDL_RenderPresent referenced in function "public: void __thiscall RenderSystem::Render(void)" (?Render@RenderSystem@@QAEXXZ)
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\Yasin\source\repos\ColourShooter\lib\SDL2\lib\x64\sdl2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Yasin\source\repos\ColourShooter\lib\SDL2\lib\x64\sdl2main.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Yasin\source\repos\ColourShooter\bin\Win32\Debug\ColourShooter.exe : fatal error LNK1120: 36 unresolved externals
