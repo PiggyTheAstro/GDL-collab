@@ -187,13 +187,6 @@
     <ClCompile Include="lib\Math\collisionDetection.cpp" />
     <ClCompile Include="lib\Math\random.cpp" />
     <ClCompile Include="lib\Math\vectors.cpp" />
-    <ClCompile Include="src\components\game\asteroidScript.cpp" />
-    <ClCompile Include="src\components\game\asteroidSpawner.cpp" />
-    <ClCompile Include="src\components\game\bulletMovement.cpp" />
-    <ClCompile Include="src\components\game\playerMovement.cpp" />
-    <ClCompile Include="src\components\game\playerShooting.cpp" />
-    <ClCompile Include="src\components\game\seekerScript.cpp" />
-    <ClCompile Include="src\components\game\seekerSpawn.cpp" />
     <ClCompile Include="src\components\rectCollider.cpp" />
     <ClCompile Include="src\components\rectRenderer.cpp" />
     <ClCompile Include="src\components\rigidbody.cpp" />
