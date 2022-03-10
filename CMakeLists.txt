@@ -8,13 +8,7 @@ foreach(FOLDER ${SRCS_FOLDERS})
   list(APPEND SRCS ${SRCS_IN_SUBFOLDER})
 endforeach()
 
-if (${CMAKE_SIZEOF_VOID_P} MATCHES 8)
-  set(SDL2_LIBRARIES ${CMAKE_CURRENT_LIST_DIR}/lib/SDL2/lib/x64/SDL2main.lib;${CMAKE_CURRENT_LIST_DIR}/lib/SDL2/lib/x64/SDL2.lib)
-else ()
-  set(SDL2_LIBRARIES ${CMAKE_CURRENT_LIST_DIR}/lib/SDL2/lib/x86/SDL2main.lib;${CMAKE_CURRENT_LIST_DIR}/lib/SDL2/lib/x86/SDL2.lib)
-endif ()
-
-message(STATUS ${SDL2_LIBRARIES})
+add_subdirectory(lib/sdl2)
 
 file(GLOB MATH_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/lib/Math/*.cpp)
 add_library(MATH_LIB ${MATH_SOURCES})
@@ -31,4 +25,4 @@ set_property(
   ${CMAKE_CURRENT_SOURCE_DIR}/lib
   ${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL2/include
 )
-target_link_libraries(GAME_EXE ${SDL2_LIBRARIES} MATH_LIB)
+target_link_libraries(GAME_EXE SDL2 MATH_LIB)

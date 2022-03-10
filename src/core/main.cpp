@@ -1,5 +1,5 @@
 #ifdef __GNUC__
-	#define SDL_MAIN_AVAILABLE
+	#define SDL_MAIN_HANDLED
 #endif
 #include <SDL.h>
 #include <core/game.h>
