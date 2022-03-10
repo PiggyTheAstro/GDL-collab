@@ -9,6 +9,7 @@ public:
 	Entity* GetEntity(unsigned int ID);
 	std::vector<Entity*>* GetAllEntities();
 	void UpdateEntities();
+	void Update() override;
 	void DestroyEntity(unsigned int ID);
 private:
 	std::vector<Entity*> entityList;

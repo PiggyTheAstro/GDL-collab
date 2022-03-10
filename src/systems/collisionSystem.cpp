@@ -22,6 +22,11 @@ void CollisionSystem::CheckCollisions()
 			}
 		}
 	}
+}
+
+void CollisionSystem::Update()
+{
+	CheckCollisions();
 	CleanDead();
 }
 

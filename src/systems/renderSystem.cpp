@@ -20,6 +20,11 @@ void RenderSystem::Render()
 	SDL_RenderPresent(renderer);
 }
 
+void RenderSystem::Update()
+{
+	Render();
+}
+
 void RenderSystem::AddRenderable(SDL_FRect* rect)
 {
 	rects.push_back(rect);

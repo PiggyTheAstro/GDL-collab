@@ -5,31 +5,27 @@ Game::Game()
 {
 	window = SDL_CreateWindow("Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 550, 750, SDL_WINDOW_MAXIMIZED);
 	serviceManager = new ServiceHandler();
-	inputManager = serviceManager->AddModule<InputHandler>();
-	entityManager = serviceManager->AddModule<EntitySystem>();
-	mainCam = serviceManager->AddModule<Camera>();
-	renderManager = serviceManager->AddModule<RenderSystem>();
-	clock = serviceManager->AddModule<Clock>();
-	assetManager = serviceManager->AddModule<AssetManager>();
-	colDetection = serviceManager->AddModule<CollisionSystem>();
+	systems.push_back(serviceManager->AddModule<Clock>());
+	systems.push_back(serviceManager->AddModule<InputHandler>());
+	systems.push_back(serviceManager->AddModule<CollisionSystem>());
+	systems.push_back(serviceManager->AddModule<EntitySystem>());
+	systems.push_back(serviceManager->AddModule<Camera>());
+	systems.push_back(serviceManager->AddModule<RenderSystem>());
+	systems.push_back(serviceManager->AddModule<AssetManager>());
 }
 
-void Game::Update() // All these functions could be turned into an update interface for each subsystem
+void Game::Update()
 {
-	clock->Tick();
-	inputManager->CheckEvent();
-	colDetection->CheckCollisions();
-	entityManager->UpdateEntities();
-	renderManager->Render();
+	for (SubSystem* sys : systems)
+	{
+		sys->Update();
+	}
 }
 
-void Game::Cleanup() // Temporary
+void Game::Cleanup()
 {
-	delete inputManager;
-	delete entityManager;
-	delete renderManager;
-	delete clock;
-	delete assetManager;
-	delete colDetection;
-	delete mainCam;
+	for (SubSystem* sys : systems)
+	{
+		delete sys;
+	}
 }

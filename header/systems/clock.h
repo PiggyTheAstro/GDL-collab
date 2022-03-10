@@ -9,6 +9,7 @@ class Clock : public SubSystem
 public:
 	Clock();
 	void Tick();
+	void Update() override;
 	float GetDeltaTime();
 	void StartTimer(std::function<void()> func, float time);
 

@@ -24,6 +24,11 @@ void InputHandler::CheckEvent()
 	}
 }
 
+void InputHandler::Update()
+{
+	CheckEvent();
+}
+
 void InputHandler::PushEvent(int eventValue)
 {
 	for (int i = 0; i < keys.size(); i++)

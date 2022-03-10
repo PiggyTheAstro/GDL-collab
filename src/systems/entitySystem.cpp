@@ -35,6 +35,11 @@ void EntitySystem::UpdateEntities()
 	}
 }
 
+void EntitySystem::Update()
+{
+	UpdateEntities();
+}
+
 void EntitySystem::DestroyEntity(unsigned int ID)
 {
 	Entity* ent = GetEntity(ID);

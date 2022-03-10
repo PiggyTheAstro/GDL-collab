@@ -24,6 +24,11 @@ void Clock::Tick()
 	}
 }
 
+void Clock::Update()
+{
+	Tick();
+}
+
 float Clock::GetDeltaTime()
 {
 	return deltaTime / 1000.0f; // Raw delta time is in milliseconds, this converts it to seconds

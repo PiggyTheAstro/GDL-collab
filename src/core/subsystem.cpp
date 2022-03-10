@@ -4,3 +4,8 @@ void SubSystem::Start()
 {
 
 }
+
+void SubSystem::Update()
+{
+
+}

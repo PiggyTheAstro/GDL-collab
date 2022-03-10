@@ -2,6 +2,7 @@
 #include <vector>
 class SubSystem
 {
-protected:
+public:
 	virtual void Start();
+	virtual void Update();
 };
