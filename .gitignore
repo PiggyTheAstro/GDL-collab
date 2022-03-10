@@ -2,4 +2,6 @@
 **/*.obj
 **/*.pdb
 **/*.o
+bin
+.vs
 build
