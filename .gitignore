@@ -1,7 +1,10 @@
 **/*.exe
 **/*.obj
 **/*.pdb
+**/*.db
 **/*.o
-bin
-.vs
-build
+**/*.dll
+bin/
+**/.vs/
+**/cmakefiles
+build/

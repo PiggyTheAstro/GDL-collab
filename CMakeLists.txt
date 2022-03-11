@@ -1,5 +1,5 @@
 project(GDL_Collab LANGUAGES CXX)
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.14)
 
 set(SRCS "")
 file(GLOB SRCS_FOLDERS src/*)
@@ -8,7 +8,10 @@ foreach(FOLDER ${SRCS_FOLDERS})
   list(APPEND SRCS ${SRCS_IN_SUBFOLDER})
 endforeach()
 
+set(CMAKE_BUILD_TYPE_CACHE ${CMAKE_BUILD_TYPE})
+set(CMAKE_BUILD_TYPE Release)
 add_subdirectory(lib/sdl2)
+set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE_CACHE})
 
 file(GLOB MATH_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/lib/Math/*.cpp)
 add_library(MATH_LIB ${MATH_SOURCES})
@@ -24,5 +27,9 @@ set_property(
   ${CMAKE_CURRENT_SOURCE_DIR}/header
   ${CMAKE_CURRENT_SOURCE_DIR}/lib
   ${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL2/include
+)
+set_property(
+  TARGET GAME_EXE PROPERTY RUNTIME_OUTPUT_DIRECTORY
+  ${CMAKE_CURRENT_SOURCE_DIR}
 )
 target_link_libraries(GAME_EXE SDL2 MATH_LIB)

@@ -1,5 +1,5 @@
-#include <systems/inputHandler.h>
 #include <SDL.h>
+#include <systems/inputHandler.h>
 #include <core/serviceHandler.h>
 
 void InputHandler::CheckEvent()
@@ -10,7 +10,7 @@ void InputHandler::CheckEvent()
 		switch (eventData.type)
 		{
 		case SDL_QUIT:
-			ServiceHandler::instance->isRunning = false;
+			ServiceHandler::instance().isRunning = false;
 			break;
 
 		case SDL_KEYDOWN:

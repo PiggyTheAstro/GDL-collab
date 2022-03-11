@@ -16,9 +16,7 @@ public:
 	Game();
 	void Update();
 	void Cleanup();
-	ServiceHandler* serviceManager;
 
 private:
-	std::vector<SubSystem*> systems;
 	SDL_Window* window;
 };

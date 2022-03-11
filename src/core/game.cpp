@@ -1,22 +1,22 @@
 #include <core/game.h>
+#include <core/serviceHandler.h>
 #include <components/rectRenderer.h>
 
 Game::Game()
 {
 	window = SDL_CreateWindow("Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 550, 750, SDL_WINDOW_MAXIMIZED);
-	serviceManager = new ServiceHandler();
-	systems.push_back(serviceManager->AddModule<Clock>());
-	systems.push_back(serviceManager->AddModule<InputHandler>());
-	systems.push_back(serviceManager->AddModule<CollisionSystem>());
-	systems.push_back(serviceManager->AddModule<EntitySystem>());
-	systems.push_back(serviceManager->AddModule<Camera>());
-	systems.push_back(serviceManager->AddModule<RenderSystem>());
-	systems.push_back(serviceManager->AddModule<AssetManager>());
+	ServiceHandler::instance().AddModule<Clock>();
+	ServiceHandler::instance().AddModule<InputHandler>();
+	ServiceHandler::instance().AddModule<CollisionSystem>();
+	ServiceHandler::instance().AddModule<EntitySystem>();
+	ServiceHandler::instance().AddModule<Camera>();
+	ServiceHandler::instance().AddModule<RenderSystem>();
+	ServiceHandler::instance().AddModule<AssetManager>();
 }
 
 void Game::Update()
 {
-	for (SubSystem* sys : systems)
+	for (SubSystem* sys : ServiceHandler::instance().systems)
 	{
 		sys->Update();
 	}
@@ -24,7 +24,7 @@ void Game::Update()
 
 void Game::Cleanup()
 {
-	for (SubSystem* sys : systems)
+	for (SubSystem* sys : ServiceHandler::instance().systems)
 	{
 		delete sys;
 	}
