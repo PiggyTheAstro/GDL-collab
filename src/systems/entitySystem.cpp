@@ -16,6 +16,8 @@ Entity& EntitySystem::CreateEntity()
 
 Entity& EntitySystem::GetEntity(unsigned int ID)
 {
+	// todo: Searching in vector might be quite painful, we might use vector that has indexes of entities correlated to their IDs
+
 	// Lower bound returns the entity with the ID passed in or an entity above that. The lambda is necessary to compare an entity with an ID
 	auto it = std::lower_bound(entityList.begin(), entityList.end(), ID, [](Entity* ent, unsigned int id) { return ent->transform.ID < id; });
 	if (it != entityList.cend() && (*it)->transform.ID == ID) // Return entity if the index is not out of bounds and the IDs match

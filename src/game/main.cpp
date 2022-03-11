@@ -6,7 +6,7 @@
 
 using namespace Vectors;
 
-void gameMain(Game& game)
+void GameMain(Game& game)
 {
   EntitySystem* entitySystem = ServiceHandler::instance().GetModule<EntitySystem>();
   Entity& player = entitySystem->CreateEntity();

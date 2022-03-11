@@ -2,13 +2,13 @@
 #include <SDL.h>
 #include <core/game.h>
 
-extern void gameMain(Game&);
+extern void GameMain(Game&);
 
 int main(int argc, char** argv)
 {
 	SDL_SetMainReady();
 	Game game = Game();
-	gameMain(game);
+	GameMain(game);
 	game.Cleanup();
 	SDL_Quit();
 	return 0;
