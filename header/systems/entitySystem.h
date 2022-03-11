@@ -5,10 +5,9 @@
 class EntitySystem : public SubSystem
 {
 public:
-	Entity* CreateEntity();
-	Entity* GetEntity(unsigned int ID);
-	std::vector<Entity*>* GetAllEntities();
-	void UpdateEntities();
+	Entity& CreateEntity();
+	Entity& GetEntity(unsigned int ID);
+	std::vector<Entity*> const& GetAllEntities();
 	void Update() override;
 	void DestroyEntity(unsigned int ID);
 private:
