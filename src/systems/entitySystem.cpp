@@ -42,7 +42,7 @@ void EntitySystem::Update()
 
 void EntitySystem::DestroyEntity(unsigned int ID)
 {
-	auto ent = GetEntity(ID);
+	Entity& ent = GetEntity(ID);
 	entityList.erase(std::find(entityList.begin(), entityList.end(), &ent));
 	delete &ent;
 }

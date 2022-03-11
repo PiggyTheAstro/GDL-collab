@@ -4,7 +4,7 @@
 
 Game::Game()
 {
-	window = SDL_CreateWindow("Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 550, 750, SDL_WINDOW_MAXIMIZED);
+	ServiceHandler::instance().AddModule<Window>("test");
 	ServiceHandler::instance().AddModule<Clock>();
 	ServiceHandler::instance().AddModule<InputHandler>();
 	ServiceHandler::instance().AddModule<CollisionSystem>();

@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <initializer_list>
 #include <core/game.h>
 #include <core/subsystem.h>
 
@@ -54,8 +55,8 @@ private:
 
 	std::vector<SubSystem*> systems;
 
-	template <typename System>
-	System* AddModule()
+	template <typename System, typename... Args>
+	System* AddModule(Args&&... args)
 	{
 		if (ServiceHandler::instance().HasModule<System>())
 		{
@@ -64,7 +65,7 @@ private:
 
 		if (std::is_base_of<SubSystem, System>::value)
 		{
-			System* sys = new System();
+			System* sys = new System(args...);
 			systems.push_back(sys);
 			return sys;
 		}

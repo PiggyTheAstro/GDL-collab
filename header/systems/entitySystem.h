@@ -2,6 +2,7 @@
 #include <core/subsystem.h>
 #include <core/entity.h>
 #include <core/serviceHandler.h>
+
 class EntitySystem : public SubSystem
 {
 public:

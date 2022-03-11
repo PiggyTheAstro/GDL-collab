@@ -8,6 +8,7 @@
 #include <systems/assetManager.h>
 #include <systems/collisionSystem.h>
 #include <systems/camera.h>
+#include <systems/window.h>
 #include <core/serviceHandler.h>
 
 class Game

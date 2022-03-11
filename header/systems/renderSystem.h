@@ -1,7 +1,7 @@
 #pragma once
+#include <SDL.h>
 #include <core/subsystem.h>
 #include <core/sprite.h>
-#include <SDL.h>
 #include <systems/camera.h>
 
 class RenderSystem : public SubSystem // TODO: Add sprite rendering support
@@ -20,5 +20,4 @@ private:
 	SDL_Renderer* renderer;
 	std::vector<SDL_FRect*> rects;
 	std::vector<Sprite*> sprites;
-
 };

@@ -1,9 +1,13 @@
+#include <cassert>
 #include <SDL.h>
-#include <systems/inputHandler.h>
 #include <core/serviceHandler.h>
+#include <systems/inputHandler.h>
+#include <systems/window.h>
 
 void InputHandler::CheckEvent()
 {
+	assert(ServiceHandler::instance().HasModule<Window>());
+
 	SDL_Event eventData = SDL_Event();
 	while (SDL_PollEvent(&eventData))
 	{

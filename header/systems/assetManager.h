@@ -1,8 +1,8 @@
 #pragma once
 #include <SDL.h>
-#include <core/subsystem.h>
 #include <string>
 #include <vector>
+#include <core/subsystem.h>
 #include <core/renderable.h>
 
 class AssetManager : public SubSystem

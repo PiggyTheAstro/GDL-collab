@@ -1,6 +1,6 @@
+#include <iostream>
 #include <systems/collisionSystem.h>
 #include <Math/collisionDetection.h>
-#include <iostream>
 
 void CollisionSystem::CheckCollisions()
 {

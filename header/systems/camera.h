@@ -1,7 +1,7 @@
 #pragma once
+#include <SDL.h>
 #include <core/subsystem.h>
 #include <Math/vectors.h>
-#include <SDL.h>
 
 class Camera : public SubSystem
 {

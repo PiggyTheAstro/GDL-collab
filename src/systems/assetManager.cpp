@@ -1,7 +1,11 @@
+#include <core/serviceHandler.h>
 #include <systems/assetManager.h>
+#include <systems/window.h>
 
 SDL_Texture* AssetManager::LoadTexture(std::string path)
 {
+	SDL_Window* window = ServiceHandler::instance().GetModule<Window>()->window;
+
 	for (Renderable* renderable : tempTextures)
 	{
 		if (renderable->path == path)
@@ -13,7 +17,7 @@ SDL_Texture* AssetManager::LoadTexture(std::string path)
 	SDL_Surface* img = SDL_LoadBMP(path.c_str());
 	int colorKey = SDL_MapRGB(img->format, 0, 0, 0);
 	SDL_SetColorKey(img, SDL_TRUE, colorKey);
-	SDL_Texture* tex = SDL_CreateTextureFromSurface(SDL_GetRenderer(SDL_GetWindowFromID(1)), img);
+	SDL_Texture* tex = SDL_CreateTextureFromSurface(SDL_GetRenderer(window), img);
 	SDL_FreeSurface(img);
 	tempTextures.push_back(new Renderable(tex, path));
 	return tex;
