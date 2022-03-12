@@ -31,6 +31,7 @@ void GameMain()
   player.transform.position = Vectors::Vector2(100.0f, 100.0f);
   player.transform.scale = Vectors::Vector2(100.0f, 100.0f);
   player.AddComponent<RectRenderer>();
+
   while (ServiceHandler::Instance().isRunning)
   {
     ServiceHandler::Instance().Update();

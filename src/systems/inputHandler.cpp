@@ -1,5 +1,6 @@
-#include <cassert>
 #include <SDL.h>
+#include <cassert>
+#include <algorithm>
 #include <core/serviceHandler.h>
 #include <systems/inputHandler.h>
 #include <systems/window.h>
@@ -35,36 +36,15 @@ void InputHandler::Update()
 
 void InputHandler::PushEvent(int eventValue)
 {
-	for (int i = 0; i < keys.size(); i++)
-	{
-		if (keys[i] == eventValue)
-		{
-			return;
-		}
-	}
-	keys.push_back(eventValue);
+	keys.insert(eventValue);
 }
 
 void InputHandler::PopEvent(int eventValue)
 {
-	for (int i = 0; i < keys.size(); i++)
-	{
-		if (keys[i] == eventValue)
-		{
-			keys.erase(keys.begin() + i);
-			return;
-		}
-	}
+	keys.erase(eventValue);
 }
 
 bool InputHandler::GetKey(int key)
 {
-	for (int i = 0; i < keys.size(); i++)
-	{
-		if (keys[i] == key)
-		{
-			return true;
-		}
-	}
-	return false;
+	return std::find(keys.cbegin(), keys.cend(), key) != keys.cend();
 }

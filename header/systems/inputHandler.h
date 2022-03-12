@@ -1,4 +1,5 @@
 #pragma once
+#include <unordered_set>
 #include <core/subsystem.h>
 
 class InputHandler : public SubSystem
@@ -10,5 +11,5 @@ public:
 	void PopEvent(int eventValue);
 	bool GetKey(int key);
 private:
-	std::vector<int> keys;
+	std::unordered_set<int> keys;
 };
