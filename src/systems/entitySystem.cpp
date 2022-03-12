@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <ranges>
 #include <cassert>
+#include <stdexcept>
 #include <systems/entitySystem.h>
 
 Entity& EntitySystem::CreateEntity()
@@ -24,7 +25,7 @@ Entity& EntitySystem::GetEntity(unsigned int ID)
 	{
 		return **it;
 	}
-	throw "Invalid entity ID";
+	throw std::runtime_error("Invalid entity ID");
 }
 
 std::vector<Entity*> const& EntitySystem::GetAllEntities()

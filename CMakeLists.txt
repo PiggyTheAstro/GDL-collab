@@ -1,17 +1,20 @@
 project(GDL_Collab LANGUAGES CXX)
 cmake_minimum_required(VERSION 3.14)
 
-set(SRCS "")
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug)
+endif()
+
 file(GLOB SRCS_FOLDERS src/*)
 foreach(FOLDER ${SRCS_FOLDERS})
   file(GLOB SRCS_IN_SUBFOLDER ${FOLDER}/*.cpp)
   list(APPEND SRCS ${SRCS_IN_SUBFOLDER})
 endforeach()
 
-set(CMAKE_BUILD_TYPE_CACHE ${CMAKE_BUILD_TYPE})
-set(CMAKE_BUILD_TYPE Release)
+# todo: Make its release type independent, possibly by invoking new cmake process
+#       Otherwise it would be necessary to recompile SDL each time build type changes
+# todo: Copy shared objects from sdl2 folder to executable
 add_subdirectory(lib/sdl2)
-set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE_CACHE})
 
 file(GLOB MATH_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/lib/Math/*.cpp)
 add_library(MATH_LIB ${MATH_SOURCES})
@@ -33,3 +36,16 @@ set_property(
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
 target_link_libraries(GAME_EXE SDL2 MATH_LIB)
+
+if(MINGW)
+  if(CMAKE_BUILD_TYPE MATCHES Debug)
+    target_compile_options(GAME_EXE PRIVATE -g3 -ggdb)
+  endif()
+  target_link_libraries(GAME_EXE -lmingw32)
+endif()
+
+if(MSVC)
+  target_compile_options(GAME_EXE PRIVATE /W4 /WX)
+else()
+  target_compile_options(GAME_EXE PRIVATE -Wall -Wextra -Wpedantic)
+endif()

@@ -3,7 +3,7 @@
 class Component // Important note: Component is an abstract class, all custom components have to inherit from it
 {
 public:
-	virtual void Start(Transform* parent) = 0;
-	virtual void Update() = 0;
-	virtual ~Component() = 0;
+	virtual void Start(Transform* parent) {};
+	virtual void Update() {};
+	virtual ~Component() {}; // Pure virtual destructor has to provide a function body
 };

@@ -8,3 +8,4 @@ bin/
 **/.vs/
 **/cmakefiles
 build/
+**/*.lnk

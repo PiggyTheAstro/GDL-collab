@@ -1,61 +1,69 @@
 #pragma once
 #include <vector>
+#include <cassert>
+#include <algorithm>
 #include <Math/vectors.h>
 #include <core/component.h>
 #include <core/transform.h>
 
-class Entity 
+class Entity
 {
 public:
-	Transform transform = Transform(ID);
+	Transform transform = Transform(ID); // todo: Do entity need to inherit Transform all the time?
+
 	~Entity();
+
 	void Start(unsigned int identifier); // Entities take in an ID in their start functions, hence why all entity creation must be done through EntitySystem's interface
 	void Update(); // Update runs every frame
 
 	template <typename Comp>
-	void AddComponent()
+	bool HasComponent() noexcept
 	{
-		Comp* comp = new Comp(); // Handled
-		if (dynamic_cast<Component*>(comp) != nullptr) // If a non-component type is passed in, the addition gets cancelled and the heap memory freed
-		{
-			components.push_back(comp);
-			comp->Start(&transform); // Transform date is passed to all components
-		}
-		else
-		{
-			delete comp;
-		}
+		auto result = std::find_if(components.cbegin(), components.cend(), [] (Component* comp) {
+			return dynamic_cast<Comp*>(comp) != nullptr;
+		});
+
+		return result != components.cend();
 	}
 
 	template <typename Comp>
-	Comp* GetComponent() // Gets a component of the template type
+	Comp& GetComponent() noexcept
 	{
-		for (int i = 0; i < components.size(); i++)
-		{
-			Comp* component = dynamic_cast<Comp*>(components[i]);
-			if (component != nullptr)
-			{
-				return component;
-			}
-		}
-		return nullptr; // Returns null if no component has been found
+		auto result = std::find_if(components.cbegin(), components.cend(), [] (Component* comp) {
+			return dynamic_cast<Comp*>(comp) != nullptr;
+		});
+
+		assert(result != components.cend());
+
+		return dynamic_cast<Comp&>(**result);
+	}
+
+	template <typename Comp, typename... Args>
+	Comp& AddComponent(Args&&... args)
+	{
+		static_assert(std::is_base_of<Component, Comp>::value);
+		assert(!this->HasComponent<Comp>());
+
+		Comp* comp = new Comp(args...);
+		comp->Start(&this->transform);
+		components.push_back(comp);
+		return *comp;
 	}
 
 	template <typename Comp>
-	void RemoveComponent()
+	void RemoveComponent() noexcept
 	{
-		for (int i = 0; i < components.size(); i++) 
-		{
-			Comp* component = dynamic_cast<Comp*>(components[i]);
-			if (component != nullptr)
-			{
-				components.erase(components.begin() + i);
-				delete component;
-			}
-		}
+		assert(this->HasComponent<Comp>());
+
+		auto result = std::find_if(components.cbegin(), components.cend(), [] (Component* comp) {
+			return dynamic_cast<Comp*>(comp) != nullptr;
+		});
+
+		delete *result;
+		components.erase(result);
 	}
 
 private:
-	std::vector<Component*> components = std::vector<Component*>();
+	std::vector<Component*> components;
 	unsigned int ID = 0;
 };

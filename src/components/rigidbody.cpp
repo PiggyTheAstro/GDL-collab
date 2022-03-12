@@ -4,7 +4,7 @@
 void Rigidbody::Start(Transform* parent)
 {
 	transform = parent;
-	clock = ServiceHandler::Instance().GetModule<Clock>();
+	clock = &ServiceHandler::Instance().GetModule<Clock>();
 }
 
 void Rigidbody::Update()

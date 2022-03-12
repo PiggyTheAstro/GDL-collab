@@ -24,13 +24,12 @@ void ServiceHandler::Init()
 
 void GameMain()
 {
-  EntitySystem* entitySystem = ServiceHandler::Instance().GetModule<EntitySystem>();
+  EntitySystem& entitySystem = ServiceHandler::Instance().GetModule<EntitySystem>();
 
-  Entity& player = entitySystem->CreateEntity();
+  Entity& player = entitySystem.CreateEntity();
   player.transform.position = Vectors::Vector2(100.0f, 100.0f);
   player.transform.scale = Vectors::Vector2(100.0f, 100.0f);
-  player.AddComponent<SpriteRenderer>();
-  player.GetComponent<SpriteRenderer>()->SetSprite("test.bmp");
+  player.AddComponent<SpriteRenderer>().SetSprite("test.bmp");
 
   while (ServiceHandler::Instance().isRunning)
   {

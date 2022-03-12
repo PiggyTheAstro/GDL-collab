@@ -1,5 +1,7 @@
 #include <algorithm>
 #include <cassert>
+#include <stdexcept>
+#include <string>
 #include <core/serviceHandler.h>
 #include <systems/assetManager.h>
 #include <systems/window.h>
@@ -9,7 +11,7 @@
 SDL_Texture* AssetManager::LoadTexture(std::string path)
 {
 	// todo: Might be preferable to resolve window once on Start()
-	SDL_Window* window = ServiceHandler::Instance().GetModule<Window>()->window;
+	SDL_Window* window = ServiceHandler::Instance().GetModule<Window>().window;
 
 	auto renderable = std::find_if(tempTextures.cbegin(), tempTextures.cend(),
 		[path] (Renderable* r) {
@@ -25,19 +27,19 @@ SDL_Texture* AssetManager::LoadTexture(std::string path)
 
 	SDL_Surface* img;
 	if (!(img = SDL_LoadBMP(path.c_str())))
-		throw SDL_GetError();
+		throw std::runtime_error(SDL_GetError());
 
 	int colorKey = SDL_MapRGB(img->format, 0, 0, 0);
 	if (SDL_SetColorKey(img, SDL_TRUE, colorKey))
-		throw SDL_GetError();
+		throw std::runtime_error(SDL_GetError());
 
 	SDL_Renderer* renderer;
 	if (!(renderer = SDL_GetRenderer(window)))
-		throw SDL_GetError();
+		throw std::runtime_error(SDL_GetError());
 
 	SDL_Texture* tex;
 	if (!(tex = SDL_CreateTextureFromSurface(renderer, img)))
-		throw SDL_GetError();
+		throw std::runtime_error(SDL_GetError());
 
 	SDL_FreeSurface(img);
 	tempTextures.push_back(new Renderable(tex, path));
@@ -67,6 +69,6 @@ void AssetManager::Dereference(SDL_Texture* texture)
 	}
 	else
 	{
-		throw "Invalid texture to dereference";
+		throw std::runtime_error("Invalid texture to dereference");
 	}
 }

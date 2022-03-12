@@ -1,14 +1,15 @@
+#include <iostream>
+#include <cassert>
 #include <components/spriteRenderer.h>
 #include <core/serviceHandler.h>
 #include <systems/assetManager.h>
-#include <iostream>
 
 void SpriteRenderer::Start(Transform* parent)
 {
 	transform = parent;
-	renderModule = ServiceHandler::Instance().GetModule<RenderSystem>();
-	assetModule = ServiceHandler::Instance().GetModule<AssetManager>();
-	sprite = new Sprite();
+	renderModule = &ServiceHandler::Instance().GetModule<RenderSystem>();
+	assetModule = &ServiceHandler::Instance().GetModule<AssetManager>();
+	sprite = new Sprite(); // todo: Does it have to be dynamically allocated?
 	sprite->rect = SDL_FRect();
 	sprite->rotation = transform->rotation;
 	renderModule->AddRenderable(sprite);
@@ -16,6 +17,8 @@ void SpriteRenderer::Start(Transform* parent)
 
 void SpriteRenderer::SetSprite(std::string path)
 {
+	assert(sprite);
+
 	auto defer_dereference = sprite->texture;
 
 	sprite->texture = assetModule->LoadTexture(path);
