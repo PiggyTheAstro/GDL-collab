@@ -6,7 +6,7 @@ void RectCollider::Start(Transform* parent)
 {
 	transform = parent;
 	rect = SDL_FRect();
-	ServiceHandler::instance().GetModule<CollisionSystem>()->AddCollider(this);
+	ServiceHandler::Instance().GetModule<CollisionSystem>()->AddCollider(this);
 }
 
 void RectCollider::Update()
@@ -63,7 +63,7 @@ void RectCollider::OnCollisionExit(Transform* other)
 
 RectCollider::~RectCollider()
 {
-	ServiceHandler::instance().GetModule<CollisionSystem>()->RemoveCollider(this);
+	ServiceHandler::Instance().GetModule<CollisionSystem>()->RemoveCollider(this);
 }
 
 SDL_FRect RectCollider::GetRect()

@@ -6,7 +6,7 @@
 
 void InputHandler::CheckEvent()
 {
-	assert(ServiceHandler::instance().HasModule<Window>());
+	assert(ServiceHandler::Instance().HasModule<Window>());
 
 	SDL_Event eventData = SDL_Event();
 	while (SDL_PollEvent(&eventData))
@@ -14,7 +14,7 @@ void InputHandler::CheckEvent()
 		switch (eventData.type)
 		{
 		case SDL_QUIT:
-			ServiceHandler::instance().isRunning = false;
+			ServiceHandler::Instance().isRunning = false;
 			break;
 
 		case SDL_KEYDOWN:

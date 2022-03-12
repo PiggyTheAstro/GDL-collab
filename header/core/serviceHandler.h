@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include <initializer_list>
-#include <core/game.h>
 #include <core/subsystem.h>
 
 // todo: It might be beneficial to use type_info hashing for lookup of runtime modules, it also will allow implementing this all without templating
@@ -9,16 +8,20 @@
 class ServiceHandler
 {
 public:
-	static ServiceHandler& instance() // Ensures that only one instance could be created
+	static ServiceHandler& Instance() // Ensures that only one instance could be created
 	{
 		static ServiceHandler instance;
 		return instance;
 	}
 
-	bool isRunning;
+	bool isRunning = true;
 
 	ServiceHandler(ServiceHandler const&) = delete;
 	void operator=(ServiceHandler const&) = delete;
+
+	void Update();
+	void Cleanup();
+	void Init(); // Should be defined for game itself, only place where AddModule is possible
 
 	template <typename System>
 	bool HasModule() noexcept
@@ -48,19 +51,16 @@ public:
 	}
 
 private:
-	friend class Game; // Only Game class has access to internal state
-
-	ServiceHandler()
-		: isRunning(true)	{}
+	ServiceHandler() {}
 
 	std::vector<SubSystem*> systems;
 
 	template <typename System, typename... Args>
 	System* AddModule(Args&&... args)
 	{
-		if (ServiceHandler::instance().HasModule<System>())
+		if (ServiceHandler::Instance().HasModule<System>())
 		{
-			return ServiceHandler::instance().GetModule<System>();
+			return ServiceHandler::Instance().GetModule<System>();
 		}
 
 		if (std::is_base_of<SubSystem, System>::value)

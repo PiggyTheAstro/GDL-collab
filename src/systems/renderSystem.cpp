@@ -7,9 +7,9 @@ RenderSystem::RenderSystem()
 {
 	rects = std::vector<SDL_FRect*>();
 	sprites = std::vector<Sprite*>();
-	SDL_Window* window = ServiceHandler::instance().GetModule<Window>()->window;
-	renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_PRESENTVSYNC); // SDL Window IDs start at 1
-	cam = ServiceHandler::instance().GetModule<Camera>();
+	SDL_Window* window = ServiceHandler::Instance().GetModule<Window>()->window;
+	renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_PRESENTVSYNC);
+	cam = ServiceHandler::Instance().GetModule<Camera>();
 }
 
 void RenderSystem::Render()

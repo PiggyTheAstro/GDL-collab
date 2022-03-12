@@ -6,8 +6,8 @@
 void SpriteRenderer::Start(Transform* parent)
 {
 	transform = parent;
-	renderModule = ServiceHandler::instance().GetModule<RenderSystem>();
-	assetModule = ServiceHandler::instance().GetModule<AssetManager>();
+	renderModule = ServiceHandler::Instance().GetModule<RenderSystem>();
+	assetModule = ServiceHandler::Instance().GetModule<AssetManager>();
 	sprite = new Sprite();
 	sprite->rect = SDL_FRect();
 	sprite->rotation = transform->rotation;

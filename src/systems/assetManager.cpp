@@ -4,7 +4,8 @@
 
 SDL_Texture* AssetManager::LoadTexture(std::string path)
 {
-	SDL_Window* window = ServiceHandler::instance().GetModule<Window>()->window;
+	// todo: Might be preferable to resolve window once on Start()
+	SDL_Window* window = ServiceHandler::Instance().GetModule<Window>()->window;
 
 	for (Renderable* renderable : tempTextures)
 	{
