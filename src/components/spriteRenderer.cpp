@@ -16,8 +16,14 @@ void SpriteRenderer::Start(Transform* parent)
 
 void SpriteRenderer::SetSprite(std::string path)
 {
+	auto defer_dereference = sprite->texture;
+
 	sprite->texture = assetModule->LoadTexture(path);
+
+	if (defer_dereference)
+		assetModule->Dereference(defer_dereference);
 }
+
 void SpriteRenderer::Update()
 {
 	sprite->rotation = transform->rotation;

@@ -7,7 +7,6 @@
 #include <systems/renderSystem.h>
 #include <systems/assetManager.h>
 #include <systems/entitySystem.h>
-#include <components/rectRenderer.h>
 #include <components/spriteRenderer.h>
 #include <components/rectCollider.h>
 
@@ -30,7 +29,8 @@ void GameMain()
   Entity& player = entitySystem->CreateEntity();
   player.transform.position = Vectors::Vector2(100.0f, 100.0f);
   player.transform.scale = Vectors::Vector2(100.0f, 100.0f);
-  player.AddComponent<RectRenderer>();
+  player.AddComponent<SpriteRenderer>();
+  player.GetComponent<SpriteRenderer>()->SetSprite("test.bmp");
 
   while (ServiceHandler::Instance().isRunning)
   {

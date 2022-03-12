@@ -1,5 +1,6 @@
 #include <core/entity.h>
 #include <iostream>
+
 Entity::~Entity()
 {
 	for (int i = components.size() - 1; i > -1; i--) // Deletes and frees memory for all components

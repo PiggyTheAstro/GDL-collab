@@ -11,6 +11,7 @@ public:
 	~Entity();
 	void Start(unsigned int identifier); // Entities take in an ID in their start functions, hence why all entity creation must be done through EntitySystem's interface
 	void Update(); // Update runs every frame
+
 	template <typename Comp>
 	void AddComponent()
 	{
